@@ -22,7 +22,7 @@ export const createCachingMethods = ({ collection, cache }) => {
 
       const cacheDoc = await cache.get(key)
       if (cacheDoc) {
-        return cacheDoc
+        return JSON.parse(cacheDoc)
       }
 
       const doc = await loader.load(id)
